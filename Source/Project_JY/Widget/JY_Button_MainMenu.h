@@ -4,22 +4,24 @@
 
 #include "CoreMinimal.h"
 #include "JY_Widget.h"
-#include "JY_Widget_SelectMenu.generated.h"
+#include "JY_Button_MainMenu.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class PROJECT_JY_API UJY_Widget_SelectMenu : public UJY_Widget
+class PROJECT_JY_API UJY_Widget_MainMenu : public UJY_Widget
 {
 	GENERATED_BODY()
-
+public:
+	static FORCEINLINE FSoftObjectPath GetWidgetPath() { return FSoftObjectPath(TEXT("/Game/UI/Widget/Main_Widget.Main_Widget")); } 
+	
+	virtual void InitWidget(bool _bActive) override;
 protected:
-	virtual void InitWidget() override;
 	virtual void SynchronizeProperties() override;
 	
 private:
-	void InitBG(TObjectPtr<UTexture2D> BGImage);
+	void InitBG(TObjectPtr<class UTexture2D> BGImage);
 	void InitText(FString _Text);
 
 	UPROPERTY(Category = "Practice", EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))

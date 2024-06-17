@@ -13,7 +13,8 @@ UCLASS()
 class PROJECT_JY_API UJY_Widget_Main : public UJY_Widget
 {
 	GENERATED_BODY()
-	
+public:
+	virtual void InitWidget(bool _bActive) override;
 private: 
 	UPROPERTY(meta = (BindWidget))
 	TObjectPtr<class UScrollBox> CPP_ScrollBox = nullptr; //tobject로 되있는 포인터

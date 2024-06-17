@@ -1,19 +1,19 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "JY_Widget_SelectMenu.h"
+#include "JY_Button_MainMenu.h"
 
 #include "Components/TextBlock.h"
 
-void UJY_Widget_SelectMenu::InitWidget()
+void UJY_Widget_MainMenu::InitWidget(bool _bActive)
 {
-	Super::InitWidget();
+	Super::InitWidget(_bActive);
 
 	InitBG(nullptr);
 	InitText(FString());
 }
 
-void UJY_Widget_SelectMenu::SynchronizeProperties()
+void UJY_Widget_MainMenu::SynchronizeProperties()
 {
 	Super::SynchronizeProperties();
 
@@ -23,11 +23,11 @@ void UJY_Widget_SelectMenu::SynchronizeProperties()
 	}
 }
 
-void UJY_Widget_SelectMenu::InitBG(TObjectPtr<UTexture2D> BGImage)
+void UJY_Widget_MainMenu::InitBG(TObjectPtr<UTexture2D> BGImage)
 {
 }
 
-void UJY_Widget_SelectMenu::InitText(FString _Text)
+void UJY_Widget_MainMenu::InitText(FString _Text)
 {
 	CPP_SelectText->SetText(FText::FromString(_Text));
 }

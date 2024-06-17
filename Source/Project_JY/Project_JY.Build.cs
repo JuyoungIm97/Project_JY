@@ -6,6 +6,11 @@ public class Project_JY : ModuleRules
 {
 	public Project_JY(ReadOnlyTargetRules Target) : base(Target)
 	{
+		PrivateIncludePaths.Add("Project_JY");
+		PrivateIncludePaths.Add("Project_JY/Widget");
+		PrivateIncludePaths.Add("Project_JY/Utils");
+		PrivateIncludePaths.Add("Project_JY/Manager");
+		
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "UMG" });

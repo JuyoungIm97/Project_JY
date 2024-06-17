@@ -15,6 +15,26 @@ class PROJECT_JY_API UJY_GameInstance : public UGameInstance
 	GENERATED_BODY()
 
 public:
+	UJY_GameInstance();
+	virtual ~UJY_GameInstance() override;
 	virtual void Init() override;
+	virtual void Shutdown() override;
 	
+	bool Tick(float DeltaSeconds);
+private:
+	void OnStartGameInstance(UGameInstance* GameInstance);
+	
+	void CreateSingleton();
+	void LoadBaseWorld();
+	
+	void DestroyManagers();
+	
+	void StartGame();
+
+	UPROPERTY(Category = UJY_GameInstance, EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
+	TSoftObjectPtr<UWorld> BaseWorld;
+
+	FTSTicker::FDelegateHandle TickDelegateHandle;
+
+	bool bLevelLoadSuccess = false;
 };
